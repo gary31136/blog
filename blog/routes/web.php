@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 // www.everyonecan.website/
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/about', function () {
