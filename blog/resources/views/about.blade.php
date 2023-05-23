@@ -22,6 +22,7 @@
 @endsection
 
 @section('content')
+
 <div class="container">
     <div class="row page-content">
         <div class="post-list-aside">
