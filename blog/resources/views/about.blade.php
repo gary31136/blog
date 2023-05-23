@@ -1,20 +1,24 @@
-@extends('layouts.appabout')
+@extends('layouts.app')
 
-@section('aboutcontainer')
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h3 class="text-uppercase">About us </h3>
-            <ol class="breadcrumb box">
-                <li><a href="#">Home</a>
-                </li>
-                <li><a href="#">Pages</a>
-                </li>
-                <li class="active">About us</li>
-            </ol>
+@section('page-title')
+<!--page title start-->
+<section class="page-title background-title dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="text-uppercase">About us </h3>
+                <ol class="breadcrumb box">
+                    <li><a href="#">Home</a>
+                    </li>
+                    <li><a href="#">Pages</a>
+                    </li>
+                    <li class="active">About us</li>
+                </ol>
+            </div>
         </div>
     </div>
-</div>
+</section>
+<!--page title end-->
 @endsection
 
 @section('content')

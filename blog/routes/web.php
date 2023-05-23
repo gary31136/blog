@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // www.everyonecan.website/
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('index');
