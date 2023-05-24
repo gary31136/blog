@@ -27,11 +27,12 @@ Route::get('/contact', function () {
 });
 
 Route::get('/posts', function () {
-    return view('posts.list');
+    $posts = [1,2,3,4,5];
+    return view('posts.list', ['posts'=>$posts]);
 });
 
 // /posts/9487
 Route::get('/posts/{id}', function ($id) {
 
     return view('posts.show');
-});
+}); 
