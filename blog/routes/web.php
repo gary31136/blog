@@ -13,6 +13,7 @@
 */
 // www.everyonecan.website/
 use Illuminate\Http\Request;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('index');
@@ -26,13 +27,32 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/posts', function () {
-    $posts = [1,2,3,4,5];
-    return view('posts.list', ['posts'=>$posts]);
-});
+//CRUD
+//3 routing: create/ edit/ list
+//***********
+//不知道為啥使用use App\Http\Controllers\PostController
+//無法使用'PostController@index'
+//需要寫完整路徑'App\Http\Controllers\PostController@index'
+//或是[PostController::class, 'index']
+//***********
+Route::post('/posts', 'PostController@store');
+Route::get('/posts/{post}', 'PostController@show');
+Route::put('/posts/{post}', 'PostController@update');
+Route::delete('/posts/{post}', 'PostController@destroy');
 
-// /posts/9487
-Route::get('/posts/{id}', function ($id) {
+Route::get('/posts/create', 'PostController@create');
+Route::get('/posts/{post}/edit', 'PostController@edit');
 
-    return view('posts.show');
-}); 
+Route::get('/posts', [PostController::class, 'index']);
+
+
+// Route::get('/posts', function () {
+//     $posts = [1,2,3,4,5];
+//     return view('posts.list', ['posts'=>$posts]);
+// });
+
+// // /posts/9487
+// Route::get('/posts/{id}', function ($id) {
+
+//     return view('posts.show');
+// });
