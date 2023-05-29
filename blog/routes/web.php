@@ -35,14 +35,16 @@ Route::get('/contact', function () {
 //需要寫完整路徑'App\Http\Controllers\PostController@index'
 //或是[PostController::class, 'index']
 //***********
-Route::post('/posts', 'PostController@store');
-Route::get('/posts/{post}', 'PostController@show');
-Route::put('/posts/{post}', 'PostController@update');
-Route::delete('/posts/{post}', 'PostController@destroy');
+Route::get('/posts/admin', [PostController::class, 'admin']);
 
-Route::get('/posts/create', 'PostController@create');
-Route::get('/posts/{post}/edit', 'PostController@edit');
+Route::get('/posts/create', [PostController::class, 'create']);
 
+Route::post('/posts', [PostController::class, 'store']);
+Route::get('/posts/{post}', [PostController::class, 'show']);
+Route::put('/posts/{post}', [PostController::class, 'update']);
+Route::delete('/posts/{post}', [PostController::class, 'destroy']);
+
+Route::get('/posts/{post}/edit',  [PostController::class, 'edit']);
 Route::get('/posts', [PostController::class, 'index']);
 
 

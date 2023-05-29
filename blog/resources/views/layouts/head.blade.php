@@ -23,7 +23,11 @@
     <link rel="stylesheet" href="/assets/css/shortcodes.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/default-theme.css">
-    <link rel="stylesheet" href="/resources/css/app.css">
+    <link rel="stylesheet" href="/css/app.css">
+
+    {{-- 使用vite的用法 須配合npm run dev時時監控 --}}
+    {{-- @vite(['resources/css/app.css']) --}}
+
     <!-- endinject -->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
