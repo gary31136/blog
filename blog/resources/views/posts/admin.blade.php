@@ -27,13 +27,18 @@
             <a href="/posts/create" class="btn btn-default pull-right">create post</a>
         </div>
 
-        <div class="list-group">
+        <ul class="list-group">
             @foreach($posts as $key =>$post)
-            <a href="#" class="list-group-item active">
+            <li class="list-group-item clearfix">
                 {{ $post->title}}
-            </a>
+                <span class="pull-right">
+                    <a href="/posts/show/{{ $post->id }}" class="btn btn-default">View</a>
+                    <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
+                    <button class="btn btn-danger">Delete</button>
+                </span>
+            </li>
             @endforeach
-        </div>
+        </ul>
 
     </div>
 </div>

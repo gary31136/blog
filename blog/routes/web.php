@@ -38,6 +38,7 @@ Route::get('/contact', function () {
 Route::get('/posts/admin', [PostController::class, 'admin']);
 
 Route::get('/posts/create', [PostController::class, 'create']);
+Route::get('/posts/show/{post}', [PostController::class, 'show']);
 
 Route::post('/posts', [PostController::class, 'store']);
 Route::get('/posts/{post}', [PostController::class, 'show']);

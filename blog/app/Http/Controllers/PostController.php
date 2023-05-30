@@ -34,6 +34,24 @@ class PostController extends Controller
         $post->save();
 
         //redirect to index
-        return redirect('/posts');
+        return redirect('/posts/admin');
+    }
+
+    //read page
+    public function show(Post $post){
+        return view('posts.showByAdmin', ['post'=> $post]);
+    }
+
+    //edit page
+    public function edit(Post $post){
+        return view('posts.edit', ['post' => $post]);
+    }
+
+    //update page
+    public function update(Request $request, Post $post){
+        $post->fill($request->all());
+        $post->save();
+
+        return redirect('/posts/admin');
     }
 }
