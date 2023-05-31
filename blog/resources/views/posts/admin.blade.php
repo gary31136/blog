@@ -24,7 +24,7 @@
     <div class="container">
 
         <div class="clearfix toolbox">
-            <a href="/posts/create" class="btn btn-default pull-right">create post</a>
+            <a href="/posts/create" class="btn btn-primary pull-right">create post</a>
         </div>
 
         <ul class="list-group">
@@ -43,22 +43,31 @@
     </div>
 </div>
 
+{{-- 使用http來刪除資料 --}}
 <form id="delete-form" action="/posts/id" method="post">
     <input type="hidden" name="_method" value="delete">
     @csrf
 </form>
 @endsection
 
-@section('script')
+{{-- @section('script')
 <script>
 let deletePost = function(id){
   let result = confirm('Do you want to delete the post?');
-  console.log(result);
+//   console.log(result);
   if(result){
     //delete
     let actionUrl = '/posts/' + id;
+
+    // 使用http來刪除資料
     $('#delete-form').attr('action', actionUrl).submit();
+
+    //使用ajax來刪除資料
+    // $.post(actionUrl, {_method: 'delete'}).done(function(){
+    //     location.reload();
+    // });
+
   }
 };
 </script>
-@endsection
+@endsection --}}

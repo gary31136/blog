@@ -58,7 +58,8 @@ class PostController extends Controller
     //delete page
     public function destroy(Post $post){
         $post->delete();
-        
+
+        //使用http刪除資料
         return redirect('/posts/admin');
     }
 }

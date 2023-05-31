@@ -3,6 +3,9 @@
     <meta name="description" content="">
     <meta name="author" content="Mosaddek">
 
+    {{-- 使用ajax來刪除資料 --}}
+    <meta name="X-CSRF-TOKEN" content="{{ csrf_token() }}">
+
     <!--favicon icon-->
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
@@ -23,10 +26,10 @@
     <link rel="stylesheet" href="/assets/css/shortcodes.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/default-theme.css">
-    <link rel="stylesheet" href="/css/app.css">
+    {{-- <link rel="stylesheet" href="/resources/css/app.css"> --}}
 
     {{-- 使用vite的用法 須配合npm run dev時時監控 --}}
-    {{-- @vite(['resources/css/app.css']) --}}
+    @vite(['resources/css/app.css'])
 
     <!-- endinject -->
 

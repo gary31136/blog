@@ -27,5 +27,8 @@
     <script src="/assets/vendor/visible/visible.js"></script>
     <script src="/assets/vendor/wow/wow.min.js"></script>
     <script src="/assets/js/scripts.js"></script>
-    <script src="/resources/js/app.js"></script>
+    <script src="/assets/js/app.js"></script>
+    {{-- <script src="/resources/js/app.js"></script> --}}
+    {{-- <script src="/public/js/app.js"></script> --}}
+    {{-- @vite(['/resources/js/app.js']) --}}
     <!-- endinject -->
