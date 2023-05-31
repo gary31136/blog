@@ -34,7 +34,7 @@
                 <span class="pull-right">
                     <a href="/posts/show/{{ $post->id }}" class="btn btn-default">View</a>
                     <a href="/posts/{{ $post->id }}/edit" class="btn btn-primary">Edit</a>
-                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-danger" onclick="deletePost({{ $post->id }})">Delete</button>
                 </span>
             </li>
             @endforeach
@@ -42,4 +42,23 @@
 
     </div>
 </div>
+
+<form id="delete-form" action="/posts/id" method="post">
+    <input type="hidden" name="_method" value="delete">
+    @csrf
+</form>
+@endsection
+
+@section('script')
+<script>
+let deletePost = function(id){
+  let result = confirm('Do you want to delete the post?');
+  console.log(result);
+  if(result){
+    //delete
+    let actionUrl = '/posts/' + id;
+    $('#delete-form').attr('action', actionUrl).submit();
+  }
+};
+</script>
 @endsection
